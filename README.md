@@ -361,7 +361,7 @@ funExit   = error "TBD:funExit"
     ambiguous.  This could happen if you write, for example:
 
     ```
-    cmp [ebp-8], 0
+    mov [ebp-8], 0
     ```
 
     Because the assembler doesn't know if the program should move a four-byte
@@ -369,7 +369,7 @@ funExit   = error "TBD:funExit"
     `[ebp-8]`.  To solve this, you can supply a size:
 
     ```
-    cmp [ebp-8], DWORD 0
+    mov [ebp-8], DWORD 0
     ```
 
     This tells the assembler to use the “double word” size for 0, which
@@ -417,8 +417,8 @@ guide](http://www.cs.virginia.edu/~evans/cs216/guides/x86.html).
 and/or tests exactly!**
 
 The testing code is the same as for `boa`. ANF conversion is provided,
-and hasn't changed aside from the addition of new primitives
-So your tests should focus on the compilation-and-execution tests.
+and hasn't changed aside from the addition of new primitives,
+so your tests should focus on the compilation-and-execution tests.
 As usual, fill in new tests in `yourTests.json` following the earlier format.
 
 An old friend is helpful here, too: `valgrind`.  You can run
